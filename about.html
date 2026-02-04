@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Presentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    .slide {
+      display: none;
+      padding: 50px;
+      text-align: center;
+      height: 100vh;
+    }
+    .active {
+      display: block;
+    }
+    h1 {
+      color: #333;
+    }
+    .nav {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Slide 1 -->
+  <div class="slide active" id="slide1">
+    <h1>Welcome to My Presentation</h1>
+    <p>Introduction and overview</p>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" id="slide2">
+    <h1>Key Points</h1>
+    <ul>
+      <li>First important idea</li>
+      <li>Second important idea</li>
+      <li>Third important idea</li>
+    </ul>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" id="slide3">
+    <h1>Conclusion</h1>
+    <p>Thank you for listening!</p>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <button onclick="showSlide(1)">Slide 1</button>
+    <button onclick="showSlide(2)">Slide 2</button>
+    <button onclick="showSlide(3)">Slide 3</button>
+  </div>
+
+  <script>
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach(slide => slide.classList.remove('active'));
+      document.getElementById('slide' + n).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
